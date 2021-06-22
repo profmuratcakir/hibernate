@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 //================================================================
 // HIBERNATE ICIN TABLO TANIMLAMASININ YAPILMASI 
@@ -43,6 +44,9 @@ public class H1_Ogrenci {
 	
 	@Column(name="ogr_not")	
 	private int ogrNot;
+	
+//	@Transient 
+//	private String adres;
 	
 	public H1_Ogrenci() {
 		

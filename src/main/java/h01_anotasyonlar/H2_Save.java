@@ -9,33 +9,34 @@ public class H2_Save {
 
 	public static void main(String[] args) {
 
-		// Tabloya eklenecek verilerin olusuturulmasi
-		H1_Ogrenci ogr1 = new H1_Ogrenci(101, "Canan Yilmaz", 90);
-		H1_Ogrenci ogr2 = new H1_Ogrenci(102, "Ilık Su Ozturk", 75);
-		
-		// - Veritabanı baglanti ayarlarinin yapilmasi (hibernate.cfg.xml) 
-		//   ve tabloyu olusturacak class'in gosterilmesi
+		// Veritabani baglanti ayarlarini Hibernate'e gostermeliyiz.
 		Configuration con = new Configuration().
 				configure("hibernate.cfg.xml").
 				addAnnotatedClass(H1_Ogrenci.class);
 		
-		// Veritabani ile iletisim icin bir oturum (session) tanimlanmasi
+		// con objesinden bir oturum grubu oluşturduk.
 		SessionFactory sf = con.buildSessionFactory();
 		
-		// tanimlanan oturumun baslatilmasi 
+		// Oturum grubundan bir oturumu başlattık.
 		Session session = sf.openSession();
-		
-		// Belirtilen oturum icin islemlerin (yazma, okuma v.b) baslatilmasi
+
+		//Acilan session icerisinde islemlere baslayabilmek icin Transaction aciyoruz.
 		Transaction tx = session.beginTransaction();
 		
-		// Veritabanina verilerin kaydedilmesi 
-		session.save(ogr1);
-		session.save(ogr2);
+		// Tabloya eklenecek verileri (record, kayit) olusturmamız gerekiyor.
+		H1_Ogrenci ogrenci1 = new H1_Ogrenci(103, "Canan Can", 99);
+		H1_Ogrenci ogrenci2 = new H1_Ogrenci(104, "Ahmet Yilmaz", 90);
 		
-		// Yukarida yapilan islemlerin veritabanina kalici olarak iletilmesi.
+		//Veritabanina kayitlarin eklenmesi
+		session.save(ogrenci1);
+		session.save(ogrenci2);
+		
+		//İslemlerin veritabanina aktarilmasi
 		tx.commit();
+	
+		// Oturumlarin kapatilmasi
+		sf.close();
 		session.close();
-
-	}
+		}
 
 }
