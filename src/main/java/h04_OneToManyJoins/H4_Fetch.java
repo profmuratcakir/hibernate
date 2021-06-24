@@ -71,8 +71,8 @@ public class H4_Fetch {
 
 		
 		// session.delete() metodu ile silme ( 222 nolu ogrenciyi silelim)
-		ogrenci = session.get(H1_Ogrenci.class, 222);
-		session.delete(ogrenci);
+		ogrenci.setOgrId(222);     // Bos olan ogrenci nesnesinin id'sinin 222 atayalım.
+		session.delete(ogrenci);   // Dolayisiyla 222 nolu id ye sahip olan ogrenci silinsin. 
 		
 
 		//--------------------------------------------------------------------------
