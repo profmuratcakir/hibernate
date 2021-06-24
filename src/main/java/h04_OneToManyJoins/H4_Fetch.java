@@ -27,23 +27,23 @@ public class H4_Fetch {
 		H2_Kitap kitap = new H2_Kitap();
 		
 		// id=111 olan ogrencinin tum kitaplarini listeleyelim.
-//		ogrenci = session.get(H1_Ogrenci.class, 111);
-//		
-//		for(H2_Kitap w: ogrenci.getKitapListesi()) {
-//			System.out.println(w);
-//		}
+		ogrenci = session.get(H1_Ogrenci.class, 111);
+		
+		for(H2_Kitap w: ogrenci.getKitapListesi()) {
+			System.out.println(w);
+		}
 		
 		// id=1002 olan kitap'ın sahibinin bilgilerini listeleyelim.
-//		kitap = session.get(H2_Kitap.class, 1002);
-//		System.out.println(kitap.getOgrenci());
+		kitap = session.get(H2_Kitap.class, 1002);
+		System.out.println(kitap.getOgrenci());
 	
 		// kitaplar ve ogrenciler tablolarindaki ortak olan ogrenci bilgilerini listeleyiniz.
-//		String hql1 = "SELECT o.ogrAd, k.isim "
-//				+ "FROM H1_Ogrenci o INNER JOIN H2_Kitap k "
-//				+ "ON o.ogrId = k.ogrenci";
-//		
-//		 List <Object[]> sonucListesi = session.createQuery(hql1).getResultList();
-//		 sonucListesi.stream().forEach((x) -> System.out.println(Arrays.toString(x)));
+		String hql1 = "SELECT o.ogrAd, k.isim "
+				+ "FROM H1_Ogrenci o INNER JOIN H2_Kitap k "
+				+ "ON o.ogrId = k.ogrenci";
+		
+		 List <Object[]> sonucListesi = session.createQuery(hql1).getResultList();
+		 sonucListesi.stream().forEach((x) -> System.out.println(Arrays.toString(x)));
 		
 		//--------------------------------------------------------------------------
 		//                              SILME ISLEMİ  
@@ -54,14 +54,13 @@ public class H4_Fetch {
 		// ----------------------------------
 		 
 		// HQL ile tum kitaplari silelim.
-//		String hql2 = "DELETE FROM H2_Kitap";
-//		int satirSayisi = session.createQuery(hql2).executeUpdate();
-//		System.out.println("Silinen Satir Sayisi:"+ satirSayisi);
+		String hql2 = "DELETE FROM H2_Kitap";
+		int satirSayisi = session.createQuery(hql2).executeUpdate();
+		System.out.println("Silinen Satir Sayisi:"+ satirSayisi);
 		
 		// session.delete() metodu ile silme ( 222 nolu ogrenciyi silelim)
-//		ogrenci = session.get(H1_Ogrenci.class, 222);
-//		session.delete(ogrenci);
-		
+		ogrenci = session.get(H1_Ogrenci.class, 222);
+		session.delete(ogrenci);
 		
 		//Parent tablodan silme
 		//------------------------------------------
@@ -72,8 +71,8 @@ public class H4_Fetch {
 
 		
 		// session.delete() metodu ile silme ( 222 nolu ogrenciyi silelim)
-//		ogrenci = session.get(H1_Ogrenci.class, 222);
-//		session.delete(ogrenci);
+		ogrenci = session.get(H1_Ogrenci.class, 222);
+		session.delete(ogrenci);
 		
 
 		//--------------------------------------------------------------------------
