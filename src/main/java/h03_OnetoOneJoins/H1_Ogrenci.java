@@ -66,7 +66,7 @@ import javax.persistence.Table;
 
 	@Override
 	public String toString() {
-		return "Ogrenci : ogrId=" + ogrId + ", ogrAd=" + ogrAd + ", ogrNot=" + ogrNot + ", gunluk=" + gunluk;
+		return "Ogrenci : ogrId=" + ogrId + ", ogrAd=" + ogrAd + ", ogrNot=" + ogrNot;
 	}
 	
 

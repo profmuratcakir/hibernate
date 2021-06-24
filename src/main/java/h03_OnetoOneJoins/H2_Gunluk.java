@@ -53,7 +53,8 @@ public class H2_Gunluk {
 
 	@Override
 	public String toString() {
-		return "Gunluk id=" + id + ", yazilar=" + yazilar ;
+		return "H2_Gunluk [id=" + id + ", yazilar=" + yazilar + ", ogrenci=" + ogrenci + "]";
 	}
+
 		
 }

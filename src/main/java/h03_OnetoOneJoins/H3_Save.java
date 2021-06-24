@@ -20,8 +20,8 @@ public class H3_Save {
 		H1_Ogrenci ogrenci3 = new H1_Ogrenci(103, "Tayyar Tan", 11, gunluk3);
 		
 		// Gunluklere sahip atanmasi
-		gunluk1.setOgrenci(ogrenci1);;
-		gunluk2.setOgrenci(ogrenci2);;
+		gunluk1.setOgrenci(ogrenci1);
+		gunluk2.setOgrenci(ogrenci2);
 		
 		
 		Configuration con = new Configuration().configure("hibernate.cfg.xml")
