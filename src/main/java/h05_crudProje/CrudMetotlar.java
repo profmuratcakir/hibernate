@@ -63,6 +63,7 @@ public class CrudMetotlar {
 				session.delete(personel);
 				tx.commit();
 				System.out.println(personelId + " nolu kisinin kaydi silinmistir.");
+				System.out.println("Silinen:" + personel);
 			}
 			
 		}catch(HibernateException e) {
